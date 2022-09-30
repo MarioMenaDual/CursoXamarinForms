@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pomodoro.Views.MenuPage"
+             xmlns:resources="clr-namespace:Pomodoro.Resx"
+             Title="Menu">
+             
+    <StackLayout VerticalOptions="FillAndExpand">
+
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="100"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+           <Image
+               Margin="0,30,0,0"
+               HeightRequest="100"
+               WidthRequest="100"
+               Source="logo_pomodoro.png"
+       	       VerticalOptions="Start"
+        	   HorizontalOptions="Start" />
+
+            <Label Grid.Column="1"  TextColor="Red"
+                   HorizontalTextAlignment="Center"
+                   VerticalTextAlignment="Center"
+                   Text="{x:Static resources:AppResources.app_name}"/>
+        </Grid>
+           
+
+        <ListView x:Name="ListViewMenu"
+                    HasUnevenRows="True">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <Grid Padding="10">
+                            <Label Text="{Binding Title}" FontSize="20"/>
+                        </Grid>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>
